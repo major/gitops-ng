@@ -19,6 +19,8 @@ spec:
       containers:
         - image: ghcr.io/major/thetagang-notifications:v1.0.7
           name: thetagang-notifications
+          command:
+            - run_earnings
           envFrom:
             - configMapRef:
                 name: thetagang-config

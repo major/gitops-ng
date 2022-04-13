@@ -10,6 +10,8 @@ spec:
     spec:
       template:
         spec:
+          concurrencyPolicy: "Replace"
+          suspend: false
           containers:
             - image: ghcr.io/major/thetagang-notifications:v1.0.7
               name: trades-bot

@@ -20,5 +20,12 @@ spec:
                     name: thetagang-config
                 - secretRef:
                     name: thetagang-secret
+              volumeMounts:
+                - mountPath: /data
+                  name: storage
           restartPolicy: Never
+          volumes:
+            - name: storage
+              persistentVolumeClaim:
+                claimName: trades-bot
   schedule: "0 * * * *"

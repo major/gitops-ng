@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: trades-pvc
+  name: trades-bot
   namespace: thetagang
 spec:
   accessModes:
@@ -15,7 +15,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: trends-pvc
+  name: trends-bot
   namespace: thetagang
 spec:
   accessModes:

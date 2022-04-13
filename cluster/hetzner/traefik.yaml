@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  path: ./namespaces/traefik.yaml
+  path: ./namespaces/traefik
   dependsOn:
     - name: core
   prune: true

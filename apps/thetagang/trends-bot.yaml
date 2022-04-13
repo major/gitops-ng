@@ -28,4 +28,4 @@ spec:
             - name: storage
               persistentVolumeClaim:
                 claimName: trends-bot
-  schedule: "0 * * * *"
+  schedule: "*/5 * * * *"

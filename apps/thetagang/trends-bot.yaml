@@ -10,7 +10,6 @@ spec:
     spec:
       template:
         spec:
-          concurrencyPolicy: "Replace"
           containers:
             - image: ghcr.io/major/thetagang-notifications:v1.0.7
               name: trends-bot
@@ -29,4 +28,6 @@ spec:
             - name: storage
               persistentVolumeClaim:
                 claimName: trends-bot
+  concurrencyPolicy: "Replace"
+  suspend: false
   schedule: "*/5 * * * *"

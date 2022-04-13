@@ -10,8 +10,6 @@ spec:
     spec:
       template:
         spec:
-          concurrencyPolicy: "Replace"
-          suspend: false
           containers:
             - image: ghcr.io/major/thetagang-notifications:v1.0.7
               name: trades-bot
@@ -30,4 +28,6 @@ spec:
             - name: storage
               persistentVolumeClaim:
                 claimName: trades-bot
+  concurrencyPolicy: "Replace"
+  suspend: false
   schedule: "*/5 * * * *"

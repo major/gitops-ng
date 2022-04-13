@@ -1,0 +1,24 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: trends-bot
+  namespace: thetagang
+spec:
+  jobTemplate:
+    metadata:
+      name: trends-bot
+    spec:
+      template:
+        spec:
+          containers:
+            - image: ghcr.io/major/thetagang-notifications:v1.0.7
+              name: trends-bot
+              command:
+                - /app/run_trends
+              envFrom:
+                - configMapRef:
+                    name: thetagang-config
+                - secretRef:
+                    name: thetagang-secret
+          restartPolicy: Never
+  schedule: "*/5 * * * *"

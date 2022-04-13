@@ -21,4 +21,4 @@ spec:
                 - secretRef:
                     name: thetagang-secret
           restartPolicy: Never
-  schedule: "*/5 * * * *"
+  schedule: "0 * * * *"

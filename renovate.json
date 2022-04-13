@@ -1,5 +1,15 @@
 {
   "extends": [
     "config:base"
-  ]
+  ],
+  "flux": {
+    "fileMatch": [
+      "\\.yaml$"
+    ]
+  },
+  "kubernetes": {
+    "fileMatch": [
+      "\\.yaml$"
+    ]
+  }
 }

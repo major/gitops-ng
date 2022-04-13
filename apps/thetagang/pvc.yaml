@@ -5,6 +5,8 @@ metadata:
   name: trades-pvc
   namespace: thetagang
 spec:
+  accessModes:
+    - ReadWriteOnce
   resources:
     requests:
       storage: 5Gi
@@ -15,6 +17,8 @@ metadata:
   name: trends-pvc
   namespace: thetagang
 spec:
+  accessModes:
+    - ReadWriteOnce
   resources:
     requests:
       storage: 5Gi

@@ -31,5 +31,5 @@ spec:
   concurrencyPolicy: "Replace"
   suspend: false
   schedule: "*/5 * * * *"
-  successfilJobsHistoryLimit: 1
+  successfulJobsHistoryLimit: 1
   failedJobsHistoryLimit: 1

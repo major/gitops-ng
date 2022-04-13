@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: earnings-bot
+  name: earnings-bot
+  namespace: thetagang
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: earnings-bot
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: earnings-bot
+    spec:
+      containers:
+        - image: ghcr.io/major/thetagang-notifications:v1.0.7
+          name: thetagang-notifications
+          envFrom:
+            - configMapRef:
+                name: thetagang-config
+            - secretRef:
+                name: thetagang-secret

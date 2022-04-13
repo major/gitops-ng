@@ -1,0 +1,9 @@
+apiVersion: v1
+data:
+  PYTHONUNBUFFERED: "1"
+  STORAGE_DIR: /data
+  TZ: Etc/UTC
+kind: ConfigMap
+metadata:
+  name: thetagang-config
+  namespace: thetagang

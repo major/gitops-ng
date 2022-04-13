@@ -27,7 +27,6 @@ spec:
   interval: 10m0s
   path: ./namespaces/traefik/dashboard
   dependsOn:
-    - name: core
     - name: traefik-base
   prune: true
   sourceRef:

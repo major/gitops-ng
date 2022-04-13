@@ -10,6 +10,7 @@ spec:
     spec:
       template:
         spec:
+          concurrencyPolicy: "Replace"
           containers:
             - image: ghcr.io/major/thetagang-notifications:v1.0.7
               name: trends-bot

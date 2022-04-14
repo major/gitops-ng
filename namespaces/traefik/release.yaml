@@ -24,6 +24,8 @@ spec:
     logs:
       access:
         enabled: true
+        filters:
+          minduration: "5ms"
       general:
         level: INFO
     persistence:

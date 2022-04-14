@@ -23,7 +23,7 @@ spec:
   values:
     logs:
       access:
-        enabled: false
+        enabled: true
       general:
         level: INFO
     persistence:

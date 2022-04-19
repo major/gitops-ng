@@ -11,7 +11,7 @@ spec:
       template:
         spec:
           containers:
-            - image: ghcr.io/major/thetagang-notifications:v1.0.7
+            - image: ghcr.io/major/thetagang-notifications:v1.0.9
               name: trends-bot
               command:
                 - /app/run_trends

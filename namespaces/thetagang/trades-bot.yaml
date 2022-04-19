@@ -9,6 +9,9 @@ spec:
       name: trades-bot
     spec:
       template:
+        metadata:
+          labels:
+            job: trades_bot
         spec:
           containers:
             - image: ghcr.io/major/thetagang-notifications:v1.0.9

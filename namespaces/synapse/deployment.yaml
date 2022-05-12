@@ -20,6 +20,7 @@ spec:
       containers:
         - image: docker.io/matrixdotorg/synapse:v1.25.0
           name: synapse
+          args: ["generate"]
           envFrom:
             - configMapRef:
                 name: synapse-config

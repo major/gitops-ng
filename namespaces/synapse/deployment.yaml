@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: synapse
+  name: synapse
+  namespace: synapse
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: synapse
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: synapse
+    spec:
+      containers:
+        - image: docker.io/matrixdotorg/synapse:v1.25.0
+          name: synapse
+          args: ["generate"]
+          env:
+            - name: SYNAPSE_SERVER_NAME
+              value: "synapse.ctnr.cloud"
+            - name: SYNAPSE_REPORT_STATS
+              value: "yes"
+              volumeMounts:
+                - mountPath: /data
+                  name: storage
+          volumes:
+            - name: storage
+              persistentVolumeClaim:
+                claimName: synapse

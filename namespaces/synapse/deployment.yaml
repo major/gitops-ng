@@ -20,16 +20,15 @@ spec:
       containers:
         - image: docker.io/matrixdotorg/synapse:v1.25.0
           name: synapse
-          args: ["generate"]
-          env:
-            - name: SYNAPSE_SERVER_NAME
-              value: "synapse.ctnr.cloud"
-            - name: SYNAPSE_REPORT_STATS
-              value: "yes"
-              volumeMounts:
-                - mountPath: /data
-                  name: storage
-          volumes:
-            - name: storage
-              persistentVolumeClaim:
-                claimName: synapse
+          envFrom:
+            - configMapRef:
+                name: synapse-config
+            - secretRef:
+                name: synapse-secret
+          volumeMounts:
+            - mountPath: /data
+              name: storage
+      volumes:
+        - name: storage
+          persistentVolumeClaim:
+            claimName: synapse

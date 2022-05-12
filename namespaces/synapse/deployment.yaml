@@ -18,7 +18,7 @@ spec:
         app: synapse
     spec:
       containers:
-        - image: docker.io/matrixdotorg/synapse:v1.25.0
+        - image: docker.io/matrixdotorg/synapse:v1.58.1
           name: synapse
           envFrom:
             - configMapRef:

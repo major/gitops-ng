@@ -1,9 +1,0 @@
-apiVersion: v1
-data:
-  POSTGRES_USER: synapse
-  POSTGRES_DB: synapse
-  POSTGRES_INITDB_ARGS: "--encoding='UTF8' --lc-collate='C' --lc-ctype='C'"
-kind: ConfigMap
-metadata:
-  name: postgres-config
-  namespace: postgres
